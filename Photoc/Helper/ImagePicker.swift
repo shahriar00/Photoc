@@ -1,3 +1,12 @@
+//
+//  ImagePicker.swift
+//  Photoc
+//
+//  Created by Shahriar Islam Sazid on 9/20/25.
+//
+import SwiftUI
+import UIKit
+
 struct ImagePicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
     @Environment(\.presentationMode) var presentationMode
