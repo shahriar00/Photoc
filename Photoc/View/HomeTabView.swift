@@ -7,17 +7,24 @@
 
 import SwiftUI
 
-struct TabView: View {
+struct HomeTabView: View {
     var body: some View {
         TabView{
-            Tab("Home",systemImage: "person"){
+            Tab("Home",systemImage: "house.fill"){
                 HomeView()
             }
+            
+            Tab("Profile",systemImage: "person.circle"){
+                ProfileView()
+            }
+            
         }
+        .tabViewStyle(.sidebarAdaptable)
+        .glassEffect(.clear)
         
     }
 }
 
 #Preview {
-    TabView()
+    HomeTabView()
 }
