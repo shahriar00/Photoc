@@ -8,8 +8,33 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @AppStorage("signin") var signin: Bool = false
+    
+    @State private var error : String? = nil
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if signin {
+            Text("Profile View")
+            
+            Button{
+                Task{
+                    do{
+                       try await FirebaseAuth.shared.signOut()
+                    }catch let err {
+                        error = err.localizedDescription
+                    }
+                }
+                
+            }label: {
+                Text("Sign Out")
+                    .foregroundColor(.red)
+                    .padding(8)
+            }
+            .buttonStyle(.glassProminent)
+        }else{
+            LoginScreen()
+        }
     }
 }
 

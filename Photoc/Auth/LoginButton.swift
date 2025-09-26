@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GoogleButton: View {
+struct LoginButton: View {
     
     var onAction: () -> Void
     

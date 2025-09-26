@@ -6,10 +6,38 @@
 //
 
 import SwiftUI
+import GoogleSignIn
+import Firebase
+import FirebaseAuth
+import UIKit
 
 struct LoginScreen: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack{
+            
+            Spacer()
+            
+            HStack{
+                
+                LoginButton(onAction: {
+                    FirebaseAuth.shared.signInWithGoogle(presenting: getViewController()) { error in
+                        print("Google Signin Error: \(String(describing: error))")
+                    }
+                
+                }, image: "google")
+                
+                LoginButton(onAction: {
+                    FirebaseAuth.shared.signInWithApple(presenting: getViewController()) { error in
+                        print("Apple Signin Error: \(String(describing: error))")
+                    }
+                }, image: "apple")
+                
+            }
+            
+            Spacer()
+        }
     }
 }
 
