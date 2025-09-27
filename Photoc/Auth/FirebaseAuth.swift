@@ -55,7 +55,6 @@ struct FirebaseAuth {
         }
     }
     
-
     private var currentNonce: String?
     
     func signInWithApple(presenting: UIViewController, completion: @escaping(Error?) -> Void) {
@@ -80,6 +79,35 @@ struct FirebaseAuth {
 
         authorizationController.performRequests()
     }
+    
+    func signInWithEmail(email: String , password: String , completion: @escaping(Error?) -> Void){
+        Auth.auth().signIn(withEmail: email, password: password){ authResult, error in
+            guard  error == nil else {
+                completion(error)
+                return
+            }
+            
+            print("Email Sign in Successfull")
+            UserDefaults.standard.set(true, forKey: "signin")
+            completion(nil)
+            
+        }
+    }
+    
+    func signUpWithEmail(email: String , password: String , completion: @escaping(Error?) -> Void){
+        Auth.auth().createUser(withEmail: email, password: password){ authResult, error in
+            guard  error == nil else {
+                completion(error)
+                return
+            }
+            
+            print("Email Sign Up in Successfull")
+            UserDefaults.standard.set(true, forKey: "signin")
+            completion(nil)
+            
+        }
+    }
+    
     
     func signOut() async throws {
         GIDSignIn.sharedInstance.signOut()
