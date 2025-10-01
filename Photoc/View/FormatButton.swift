@@ -1,3 +1,11 @@
+//
+//  FormatButton.swift
+//  Photoc
+//
+//  Created by Shahriar Islam Sazid on 10/1/25.
+//
+import SwiftUI
+
 struct FormatButton: View {
     let format: ImageFormat
     let isSelected: Bool

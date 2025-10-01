@@ -1,3 +1,11 @@
+//
+//  AnimatedGradientBackground.swift
+//  Photoc
+//
+//  Created by Shahriar Islam Sazid on 10/1/25.
+//
+
+import SwiftUI
 
 struct AnimatedGradientBackground: View {
     @State private var animateGradient = false

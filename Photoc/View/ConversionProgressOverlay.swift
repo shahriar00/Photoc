@@ -1,3 +1,11 @@
+//
+//  ConversionProgressOverlay.swift
+//  Photoc
+//
+//  Created by Shahriar Islam Sazid on 10/1/25.
+//
+import SwiftUI
+
 // MARK: - Conversion Progress Overlay
 struct ConversionProgressOverlay: View {
     let progress: Double

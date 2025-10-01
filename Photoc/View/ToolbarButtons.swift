@@ -1,3 +1,11 @@
+//
+//  ToolbarButtons.swift
+//  Photoc
+//
+//  Created by Shahriar Islam Sazid on 10/1/25.
+//
+import SwiftUI
+
 struct ToolbarButtons: View {
     @ObservedObject var viewModel: ConversionViewModel
     

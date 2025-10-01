@@ -14,7 +14,11 @@ struct ProfileView: View {
     @State private var error : String? = nil
     
     var body: some View {
-        VStack{
+        
+        ZStack{
+            
+            AnimatedGradientBackground()
+            
             LoginScreen()
         }
     }

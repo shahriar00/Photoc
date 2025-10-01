@@ -9,7 +9,7 @@ import SwiftUI
 import GoogleSignIn
 import Firebase
 import FirebaseAuth
-import UIKit
+
 
 struct LoginScreen: View {
     
@@ -66,13 +66,15 @@ struct LoginScreen: View {
                          LogOut()
                      }) {
                          Text("Logout")
-                             .foregroundColor(.white)
+                             .foregroundColor(.gray)
                              .frame(maxWidth: .infinity)
                              .padding()
-                             .background(Color.red)
+                           
                              .cornerRadius(10)
                      }
+                     .glassEffect(.clear)
                      .padding(.horizontal, 20)
+                
                 }
 
                 
@@ -99,13 +101,16 @@ struct LoginScreen: View {
                     handleEmailAuth()
                 }label: {
                     Text(isSignUp ? "Sign Up" : "Sign In")
-                        .foregroundColor(.white)
+                        .foregroundColor(.gray)
                         .frame(maxWidth: .infinity)
                         .padding(10)
-                        .background(Color.blue)
+                       
                         .cornerRadius(10)
                 }
+                .glassEffect(.clear)
                 .padding(.horizontal,20)
+              
+               
                 
                 Button{
                     isSignUp.toggle()

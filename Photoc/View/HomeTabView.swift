@@ -20,7 +20,6 @@ struct HomeTabView: View {
             
         }
         .tabViewStyle(.sidebarAdaptable)
-        .glassEffect(.clear)
         
     }
 }

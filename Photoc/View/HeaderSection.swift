@@ -1,3 +1,11 @@
+//
+//  HeaderSection.swift
+//  Photoc
+//
+//  Created by Shahriar Islam Sazid on 10/1/25.
+//
+import SwiftUI
+
 struct HeaderSection: View {
     var body: some View {
         VStack(spacing: 8) {
