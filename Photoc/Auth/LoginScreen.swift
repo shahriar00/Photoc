@@ -34,6 +34,7 @@ struct LoginScreen: View {
                     Text("Welcome!")
                        .font(.largeTitle)
                       .fontWeight(.bold)
+                      .foregroundColor(.white)
                     
                     VStack(spacing: 9){
                         
@@ -83,6 +84,7 @@ struct LoginScreen: View {
                 Text(isSignUp ? "Create Account" : "Welcome Back")
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                    .foregroundColor(.white)
                 
                 VStack{
                     TextField("Email", text: $email)
@@ -116,22 +118,22 @@ struct LoginScreen: View {
                     isSignUp.toggle()
                 }label: {
                     Text(isSignUp ? "Already have an account? Sign In" : "Don't have an account? Sign Up")
-                        .foregroundColor(.blue)
+                        .foregroundColor(.white)
                 }
                 
                 
                 HStack {
                     Rectangle()
                         .frame(height: 1)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                     
                     Text("OR")
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                         .padding(.horizontal, 10)
                     
                     Rectangle()
                         .frame(height: 1)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                 }
                 .padding(.horizontal, 20)
                 

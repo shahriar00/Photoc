@@ -48,9 +48,13 @@ struct FirebaseAuth {
                     return
                 }
                 
-                print("Sign in successfull")
-                
+                print("Google Sign in successful")
                 UserDefaults.standard.set(true, forKey: "signin")
+                
+                // ✅ Trigger instant UI update
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
             }
         }
     }
@@ -210,7 +214,10 @@ class AppleSignInCoordinator: NSObject, ASAuthorizationControllerDelegate, ASAut
                 
                 print("Apple Sign in successful")
                 UserDefaults.standard.set(true, forKey: "signin")
-                self.completion(nil)
+                // ✅ Trigger instant UI update
+                    DispatchQueue.main.async {
+                        self.completion(nil)
+                    }
             }
         }
     }
