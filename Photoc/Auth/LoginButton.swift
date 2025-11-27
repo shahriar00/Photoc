@@ -10,7 +10,6 @@ import SwiftUI
 struct LoginButton: View {
     
     var onAction: () -> Void
-    
     let image: String
     
     var body: some View {
@@ -18,18 +17,31 @@ struct LoginButton: View {
             onAction()
         }label:{
             ZStack{
-                Circle()
-                    .foregroundColor(.white)
-                    .shadow(radius: 4,x: 0,y: 2)
+                RoundedRectangle(cornerRadius: 18)
+                    .fill(.ultraThinMaterial)
+                    .shadow(color: Color.black.opacity(0.15), radius: 15, x: 0, y: 8)
+                
+                RoundedRectangle(cornerRadius: 18)
+                    .strokeBorder(
+                        LinearGradient(
+                            colors: [
+                                Color.white.opacity(0.4),
+                                Color.white.opacity(0.1)
+                            ],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ),
+                        lineWidth: 1.5
+                    )
                 
                 Image(image)
                     .resizable()
                     .scaledToFit()
-                    .padding(8)
-                    .mask(Circle())
+                    .frame(width: 32, height: 32)
             }
-            .frame(width: 50,height: 50)
+            .frame(width: 70, height: 70)
         }
+        .buttonStyle(ScaleButtonStyle())
     }
 }
 

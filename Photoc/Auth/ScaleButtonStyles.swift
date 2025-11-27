@@ -1,0 +1,19 @@
+//
+//  ScaleButtonStyles.swift
+//  Photoc
+//
+//  Created by Shahriar Islam Sazid on 11/27/25.
+//
+
+import SwiftUI
+
+struct ScaleButtonStyles: ButtonStyle {
+    var scale: CGFloat = 0.96
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? scale : 1)
+            .animation(.spring(response: 0.3, dampingFraction: 0.6), value: configuration.isPressed)
+    }
+}
+
